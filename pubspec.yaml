@@ -8,12 +8,18 @@ environment:
 
 dependencies:
   bloc: ^9.0.0
+  database_client:
+    path: packages/database_client/database_client
+  expenses_repository:
+    path: packages/expenses_repository
   flutter:
     sdk: flutter
   flutter_bloc: ^9.1.1
   flutter_localizations:
     sdk: flutter
   intl: ^0.20.2
+  supabase_database:
+    path: packages/database_client/supabase_database
 
 dev_dependencies:
   bloc_test: ^10.0.0
