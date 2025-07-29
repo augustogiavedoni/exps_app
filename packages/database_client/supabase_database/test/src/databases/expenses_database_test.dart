@@ -24,7 +24,11 @@ void main() {
 
     group('add', () {
       test('Should add an expense to the database.', () async {
-        final expense = Expense(amount: 100, date: DateTime.now());
+        final expense = Expense(
+          userId: 'f8e1a603-a858-431d-bf5c-9e62be3fb266',
+          amount: 100,
+          date: DateTime.now(),
+        );
 
         await database.add(expense);
 
@@ -58,7 +62,13 @@ void main() {
 
         test('Should throw an $AddException when an error occurs.', () {
           expect(
-            () => database.add(Expense(amount: 100, date: DateTime.now())),
+            () => database.add(
+              Expense(
+                userId: 'f8e1a603-a858-431d-bf5c-9e62be3fb266',
+                amount: 100,
+                date: DateTime.now(),
+              ),
+            ),
             throwsA(isA<AddException>()),
           );
         });
