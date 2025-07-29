@@ -8,8 +8,6 @@ environment:
 
 dependencies:
   bloc: ^9.0.0
-  database_client:
-    path: packages/database_client/database_client
   expenses_repository:
     path: packages/expenses_repository
   flutter:
