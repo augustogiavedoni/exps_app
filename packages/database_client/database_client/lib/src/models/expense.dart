@@ -10,6 +10,7 @@ part 'expense.g.dart';
 class Expense extends Equatable {
   /// {@macro expense}
   const Expense({
+    required this.userId,
     required this.amount,
     required this.date,
   });
@@ -19,6 +20,10 @@ class Expense extends Equatable {
   factory Expense.fromJson(Map<String, dynamic> json) =>
       _$ExpenseFromJson(json);
 
+  /// The ID of the user who made the expense.
+  @JsonKey(name: 'user_id')
+  final String userId;
+
   /// The amount of the expense.
   @JsonKey(fromJson: _serializeAmountFromJson, toJson: _serializeAmountToJson)
   final double amount;
@@ -27,7 +32,7 @@ class Expense extends Equatable {
   final DateTime date;
 
   @override
-  List<Object> get props => [amount, date];
+  List<Object> get props => [userId, amount, date];
 
   /// Converts the current [Expense] instance into a JSON [Map].
   Map<String, dynamic> toJson() => _$ExpenseToJson(this);
